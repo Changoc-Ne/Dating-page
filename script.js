@@ -145,7 +145,6 @@ function setInitialTime() {
   });
 }
 
-setInitialTime();
 
 // =========================
 // LẤY GIỜ ĐANG ĐƯỢC CHỌN
@@ -288,8 +287,41 @@ document.getElementById("confirmBtn").addEventListener("click", () => {
     ? state.snacks.join(", ")
     : "chưa chọn món ăn vặt";
 
-  message.textContent =
-    `Đã chốt! Hẹn ${formatLongDate(state.date)} lúc ${state.time}. ${snackText} ✨`;
+  const successText = document.getElementById("successText");
+  const successOverlay = document.getElementById("successOverlay");
+
+  successText.textContent =
+    `Hẹn bạn vào ${formatLongDate(state.date)} lúc ${state.time}. ${snackText} ✨`;
+
+  successOverlay.classList.add("show");
 });
 
-renderCalendar();
+// =========================
+// KHỞI TẠO AN TOÀN KHI DOM SẴN SÀNG
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Vẽ lịch ngay lập tức
+  renderCalendar();
+
+  // 2. Chờ 100ms cho layout tính xong chiều cao rồi mới set bánh xe giờ (tránh lỗi offsetHeight = 0)
+  setTimeout(() => {
+    setInitialTime();
+  }, 100);
+
+  // 3. Sự kiện đóng Popup
+  const successClose = document.getElementById("successClose");
+  const successBtn = document.getElementById("successBtn");
+  const successOverlay = document.getElementById("successOverlay");
+
+  if (successClose) {
+    successClose.addEventListener("click", () => {
+      successOverlay.classList.remove("show");
+    });
+  }
+
+  if (successBtn) {
+    successBtn.addEventListener("click", () => {
+      successOverlay.classList.remove("show");
+    });
+  }
+});
