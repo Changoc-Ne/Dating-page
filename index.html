@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hẹn Một Cuộc Hẹn 💕</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="logo">date<span>day</span> ♡</div>
+      <div class="nav-note">Một buổi hẹn nhỏ, một kỷ niệm lớn.</div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">LET'S MAKE A PLAN ✦</p>
+        <h1>Mình đi hẹn hò<br><span>nhé?</span></h1>
+        <p class="hero-text">Chọn ngày, chọn giờ, chọn vài món ăn vặt yêu thích.<br>Còn lại để buổi hẹn lo. ✨</p>
+        <a href="#booking" class="hero-btn">Bắt đầu chọn lịch ↓</a>
+      </div>
+      <div class="hero-card">
+        <div class="mini-photo">♡</div>
+        <p>YOUR NEXT<br><strong>DATE</strong></p>
+        <div class="doodle">✦ ✿ ♡ ✿ ✦</div>
+      </div>
+    </header>
+
+    <main id="booking">
+      <section class="section">
+        <div class="section-head">
+          <span class="step">01</span>
+          <div>
+            <p class="kicker">WHEN?</p>
+            <h2>Chọn ngày gặp nhau</h2>
+          </div>
+        </div>
+
+        <div class="calendar-wrap">
+          <div class="calendar-top">
+            <button id="prevMonth" class="icon-btn">‹</button>
+            <div>
+              <strong id="monthTitle"></strong>
+              <span id="selectedDateLabel">Chưa chọn ngày</span>
+            </div>
+            <button id="nextMonth" class="icon-btn">›</button>
+          </div>
+          <div class="weekdays">
+            <span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span>
+          </div>
+          <div id="calendar" class="calendar"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <span class="step">02</span>
+          <div>
+            <p class="kicker">WHAT TIME?</p>
+            <h2>Chọn giờ hẹn</h2>
+          </div>
+        </div>
+
+        <div class="time-picker" id="timeGrid">
+          <div class="time-column">
+            <span class="time-label">GIỜ</span>
+            <div class="time-wheel" id="hourWheel">
+              <div class="wheel-item">17</div>
+              <div class="wheel-item">18</div>
+              <div class="wheel-item selected">19</div>
+              <div class="wheel-item">20</div>
+              <div class="wheel-item">21</div>
+            </div>
+          </div>
+          <div class="time-separator">:</div>
+          <div class="time-column">
+            <span class="time-label">PHÚT</span>
+            <div class="time-wheel" id="minuteWheel">
+              <div class="wheel-item">00</div>
+              <div class="wheel-item">05</div>
+              <div class="wheel-item selected">10</div>
+              <div class="wheel-item">15</div>
+              <div class="wheel-item">20</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section snacks-section">
+        <div class="section-head">
+          <span class="step">03</span>
+          <div>
+            <p class="kicker">SNACK DATE</p>
+            <h2>Chọn món ăn vặt</h2>
+            <p class="sub">Chọn bao nhiêu cũng được, miễn là ăn cùng nhau. 😋</p>
+          </div>
+        </div>
+
+       <div class="snack-grid">
+
+  <button class="snack" data-name="🍕 Pizza">🍕<span>Pizza</span></button>
+  <button class="snack" data-name="🍔 Burger">🍔<span>Burger</span></button>
+  <button class="snack" data-name="🍟 Khoai tây chiên">🍟<span>Khoai tây chiên</span></button>
+  <button class="snack" data-name="🌭 Hot dog">🌭<span>Hot dog</span></button>
+
+  <button class="snack" data-name="🍗 Gà rán">🍗<span>Gà rán</span></button>
+  <button class="snack" data-name="🍤 Tôm chiên">🍤<span>Tôm chiên</span></button>
+  <button class="snack" data-name="🥟 Há cảo">🥟<span>Há cảo</span></button>
+  <button class="snack" data-name="🍜 Mì cay">🍜<span>Mì cay</span></button>
+
+  <button class="snack" data-name="🍣 Sushi">🍣<span>Sushi</span></button>
+  <button class="snack" data-name="🍙 Cơm nắm">🍙<span>Cơm nắm</span></button>
+  <button class="snack" data-name="🍱 Cơm Bento">🍱<span>Cơm Bento</span></button>
+  <button class="snack" data-name="🌮 Tacos">🌮<span>Tacos</span></button>
+
+  <button class="snack" data-name="🥞 Pancake">🥞<span>Pancake</span></button>
+  <button class="snack" data-name="🧇 Waffle">🧇<span>Waffle</span></button>
+  <button class="snack" data-name="🍩 Donut">🍩<span>Donut</span></button>
+  <button class="snack" data-name="🍰 Bánh ngọt">🍰<span>Bánh ngọt</span></button>
+
+  <button class="snack" data-name="🍦 Kem">🍦<span>Kem</span></button>
+  <button class="snack" data-name="🍮 Flan">🍮<span>Flan</span></button>
+  <button class="snack" data-name="🍓 Trái cây">🍓<span>Trái cây</span></button>
+  <button class="snack" data-name="🍫 Chocolate">🍫<span>Chocolate</span></button>
+
+  <button class="snack" data-name="🧋 Trà sữa">🧋<span>Trà sữa</span></button>
+  <button class="snack" data-name="☕ Cà phê">☕<span>Cà phê</span></button>
+  <button class="snack" data-name="🥤 Nước ngọt">🥤<span>Nước ngọt</span></button>
+  <button class="snack" data-name="🍵 Trà">🍵<span>Trà</span></button>
+
+</div>
+      </section>
+
+      <section class="summary">
+        <div class="summary-title">
+          <span>♡</span>
+          <div>
+            <p class="kicker">YOUR DATE PLAN</p>
+            <h2>Buổi hẹn của chúng mình</h2>
+          </div>
+        </div>
+
+        <div class="summary-info">
+          <div><small>NGÀY</small><strong id="summaryDate">Chưa chọn</strong></div>
+          <div><small>GIỜ</small><strong id="summaryTime">Chưa chọn</strong></div>
+          <div><small>ĐỒ ĂN</small><strong id="summarySnacks">Chưa chọn</strong></div>
+        </div>
+
+        <button id="confirmBtn" class="confirm-btn">Chốt lịch hẹn ♡</button>
+        <p id="message" class="message"></p>
+      </section>
+    </main>
+
+    <footer>Made by ♡ Changoc.</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
